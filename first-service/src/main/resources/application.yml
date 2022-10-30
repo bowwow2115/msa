@@ -1,6 +1,5 @@
 server:
   port: 8081
-#  port: ${random.int(10000,51000)}
 
 spring:
   application:
