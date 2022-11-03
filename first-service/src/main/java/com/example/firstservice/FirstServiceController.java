@@ -31,11 +31,17 @@ public class FirstServiceController {
         return "Welcome to the First service.";
     }
 
-//    @GetMapping("/message")
-//    public String message(@RequestHeader("first-request") String header) {
-//        log.info(header);
-//        return "Hello World in First Service.";
-//    }
+    @GetMapping("/message")
+    public String message(@RequestHeader("first-request") String header) {
+        log.info(header);
+        return "Hello World in First Service.";
+    }
+
+    @GetMapping("/check")
+    public String check() {
+        return "Hi, there. This is a message from Second Service.";
+    }
+
 //
 //    @GetMapping("/check")
 //    public String check(HttpServletRequest request) {
