@@ -39,7 +39,7 @@ public class FirstServiceController {
 
     @GetMapping("/check")
     public String check() {
-        return "Hi, there. This is a message from Second Service.";
+        return "Hi, there. This is a message from First Service.";
     }
 
 //
