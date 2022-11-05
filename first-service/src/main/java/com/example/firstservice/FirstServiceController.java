@@ -19,12 +19,13 @@ import java.util.Enumeration;
 @RequestMapping("/first-service")
 @Slf4j
 public class FirstServiceController {
-//    Environment env;
-//
-//    @Autowired
-//    public FirstServiceController(Environment env) {
-//        this.env = env;
-//    }
+
+    Environment env;
+
+    @Autowired
+    public FirstServiceController(Environment env) {
+        this.env = env;
+    }
 
     @GetMapping("/welcome")
     public String welcome() {
@@ -38,8 +39,12 @@ public class FirstServiceController {
     }
 
     @GetMapping("/check")
-    public String check() {
-        return "Hi, there. This is a message from First Service.";
+    public String check(HttpServletRequest request) {
+
+        log.info("Server port={}", request.getServerPort());
+
+        return String.format("Hi there. This is a message from First Service on PORT %s"
+                    , env.getProperty("local.server.port"));
     }
 
 //
