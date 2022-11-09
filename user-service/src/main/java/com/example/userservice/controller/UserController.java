@@ -26,17 +26,17 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/health_check")
+    @GetMapping("/user-service/health_check")
     public String status() {
-        return "I'm okay";
+        return String.format("Port: %s", env.getProperty("local.server.port"));
     }
 
-    @GetMapping("/welcome")
+    @GetMapping("/user-service/welcome")
     public String welcome() {
         return greeting.getMewssage();
     }
 
-    @PostMapping("/users")
+    @PostMapping("/user-service/users")
     public ResponseEntity createUser(@RequestBody RequsetUser user) {
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
