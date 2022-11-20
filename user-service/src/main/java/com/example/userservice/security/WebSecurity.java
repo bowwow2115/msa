@@ -15,12 +15,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     private UserService userService;
     private BCryptPasswordEncoder passwordEncoder;
-    private Environment environment;
+    private Environment env;
 
-    public WebSecurity(UserService userService, BCryptPasswordEncoder passwordEncoder, Environment environment) {
+    public WebSecurity(UserService userService, BCryptPasswordEncoder passwordEncoder, Environment env) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
-        this.environment = environment;
+        this.env = env;
     }
 
     @Override
@@ -35,8 +35,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     }
 
     private AuthenticationFilter getAuthenticationFilter() throws Exception {
-        AuthenticationFilter authenticationFilter = new AuthenticationFilter();
-        authenticationFilter.setAuthenticationManager(authenticationManager());
+        AuthenticationFilter authenticationFilter = new AuthenticationFilter(authenticationManager(),userService, env);
+//        authenticationFilter.setAuthenticationManager(authenticationManager());
         return authenticationFilter;
     }
 
