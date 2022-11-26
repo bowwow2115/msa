@@ -8,4 +8,4 @@ spring:
     config:
       server:
         git:
-          uri: file://Users/parksh/projects/msa
+          uri: file://Users/parksh/projects/msa-config
