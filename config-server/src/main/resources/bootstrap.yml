@@ -1,6 +1,7 @@
 encrypt:
 #  key: asdfg12345667890
   key-store:
-    location: file://${user.home}/projects/msa-config-native/keystore/apiEncryptionKey.jks
+#    location: file://${user.home}/projects/msa-config-native/keystore/apiEncryptionKey.jks
+    location: file:/apiEncryptionKey.jks
     password: test1234
     alias: apiEncryptionKey
