@@ -6,17 +6,17 @@
 각 도메인을 클라우드서버로 나눈 것 뿐만 아니라 kafka를 통한 데이터 동기화 및 Sleuth를 통한 분산추적, Prometheus, Grafana를 통한 모니텅링 을 학습했습니다.
 
 * 서버구성
- * kafka
- * zookeeper
- * zipkin
- * prometheus
- * rabbitmq
- * ecommerce-server(클라우드서버)
- * apigateway-service(게이트웨이)
- * config-server(환경설정서버)
- * user-service(유저도메인)
- * order-service(주문도메인)
- * catalog-service(카탈로그도메인)
+  * kafka
+  * zookeeper
+  * zipkin
+  * prometheus
+  * rabbitmq
+  * ecommerce-server(클라우드서버)
+  * apigateway-service(게이트웨이)
+  * config-server(환경설정서버)
+  * user-service(유저도메인)
+  * order-service(주문도메인)
+  * catalog-service(카탈로그도메인)
 
 * 사용기술
   * Spring boot 
